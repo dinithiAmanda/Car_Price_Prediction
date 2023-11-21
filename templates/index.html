@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>VEHICLE PRICE PREDICTION</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="title">Vehicle Price Predictor</div>
+      <form action="/" method="POST">
+        <div class="form">
+          <div class="inputfield">
+            <label for="name">Brand Name</label>
+            <div class="custom_select">
+              <select name="name" id="name" required>
+                <option value="" selected hidden>Select</option>
+                <option value="maruti">Maruti</option>
+                <option value="hyundai">Hyundai</option>
+                <option value="mahindra">Mahindra</option>
+                <option value="tata">Tata</option>
+                <option value="honda">Honda</option>
+                <option value="toyota">Toyota</option>
+                <option value="ford">Ford</option>
+                <option value="chevrolet">Chevrolet</option>
+                <option value="renault">Renault</option>
+                <option value="volkswagen">Volkswagen</option>
+                <option value="bmw">BMW</option>
+                <option value="skoda">Skoda</option>
+                <option value="nissan">Nissan</option>
+                <option value="jaguar">Jaguar</option>
+                <option value="volvo">Volvo</option>
+                <option value="datsun">Datsun</option>
+                <option value="mercedes-benz">Mercedes-Benz</option>
+                <option value="fiat">Fiat</option>
+                <option value="audi">Audi</option>
+                <option value="lexus">Lexus</option>
+                <option value="jeep">Jeep</option>
+                <option value="mitsubishi">Mitsubishi</option>
+                <option value="force">Force</option>
+                <option value="land">Land Rover</option>
+                <option value="isuzu">Isuzu</option>
+                <option value="kia">KIA</option>
+                <option value="ambassador">Ambassador</option>
+                <option value="daewoo">Daewoo</option>
+                <option value="mg">MG</option>
+                <option value="ashok">Ashok Leyland</option>
+                <option value="opel">Opel</option>
+              </select>
+            </div>
+          </div>
+          <div class="inputfield">
+            <label for="year">Year</label>
+            <input class="input" type="text" name="year" required />
+          </div>
+          <div class="inputfield">
+            <label for="engine">Engine Capasity (cc)</label>
+            <input class="input" type="text" name="engine" required />
+          </div>
+          <div class="inputfield">
+            <label for="mileage">Mileage (km)</label>
+            <input class="input" type="text" name="mileage" required />
+          </div>
+          <div class="inputfield">
+            <label for="fuel">Fuel Type</label>
+            <div class="custom_select">
+              <select name="fuel" id="fuel" required>
+                <option value="" selected hidden>Select</option>
+                <option value="diesel">Diesel</option>
+                <option value="petrol">Petrol</option>
+                <option value="other_fuel">Other Fuel</option>
+              </select>
+            </div>
+          </div>
+          <div class="inputfield">
+            <label for="transmission">Transmission</label>
+            <div class="custom_select">
+              <select name="transmission" id="transmission" required>
+                <option value="" selected hidden>Select</option>
+                <option value="manual">Manual</option>
+                <option value="auto">Auto</option>
+              </select>
+            </div>
+          </div>
+          <div class="inputfield">
+            <label for="owner">Owner Type</label>
+            <div class="custom_select">
+              <select name="owner" id="ower" required>
+                <option value="" selected hidden>Select</option>
+                <option value="first_owner">First Owner</option>
+                <option value="second_owner">Second Owner</option>
+                <option value="third_owner">Third Owner</option>
+                <option value="fourth_&_above_owner">
+                  Fourth & Above Owner
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="inputfield">
+            <label for="seller_type">Seller Type</label>
+            <div class="custom_select">
+              <select name="seller_type" id="seller_type" required>
+                <option value="" selected hidden>Select</option>
+                <option value="individual">Individual</option>
+                <option value="dealer">Dealer</option>
+                <option value="trustmark_dealer">Trustmark Dealer</option>
+              </select>
+            </div>
+          </div>
+          <div class="inputfield">
+            <input class="btn" type="submit" value="Predict Price" />
+          </div>
+        </div>
+      </form>
+
+      <div class="result">
+        {% if pred_value != 0 %}
+        <p>Estimated Price : LKR {{pred_value}}</p>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>
